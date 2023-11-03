@@ -26,8 +26,8 @@ s initializeSpriteBasicSize. s initializeSpritesCollection.  si:= s spriteBasicS
 
 0 to: s form width - si by: si do: [ :px | 
 	0 to: s form height - si by: si do: [:py |
-		s spritesCollection add: (s form copy: (Rectangle origin: px@py corner: (px+si)@(py+si))).
+		s extractSpriteAtPx: px py: py
 		]].
-s spritesCollection .
+
 self assert: s spritesCollection size equals: (s form width // si) * (s form height // si)
 ]

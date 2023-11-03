@@ -10,6 +10,13 @@ Class {
 	#category : #'CustomThingsMOOC-challenge2'
 }
 
+{ #category : #extracting }
+CustomSprites >> extractSpriteAtPx: px py: py [ 
+
+self spritesCollection add: (self form copy: (Rectangle origin: px@py corner: 
+(px+self spriteBasicSize)@(py+self spriteBasicSize)))
+]
+
 { #category : #accessing }
 CustomSprites >> filename [
 ^ filename 
